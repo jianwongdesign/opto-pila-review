@@ -205,7 +205,7 @@ dd { overflow-wrap: anywhere; }
 }
 @media (max-aspect-ratio: 4/5) {
   .heroimage { bottom: 20%; }
-  .heroimage img { object-position: 84% 35%; }
+  .heroimage img { object-position: 65% 35%; }
   .hero::before {
     background: linear-gradient(0deg, #17191f 15%, rgb(23 25 31 / 97%) 21%, rgb(23 25 31 / 73%) 34%, transparent 60%),
       linear-gradient(180deg, rgb(23 23 31 / 50%), transparent 19%);
@@ -377,4 +377,14 @@ footer :focus-visible { outline-color: var(--apricot); }
   .guide-title { font-size: .8rem; }
   .guide-choices li:first-child { border-left: 1px solid #63708c; }
   .guide-choices li:first-child a { padding-left: 10px; }
+}
+
+.contact-welcome { background: #f6dfcf; }
+.contact-welcome .intro { align-self: center; margin: 0; padding: clamp(25px, 4vw, 60px); }
+.contact-welcome .button { margin-top: 20px; }
+.contact-welcome .welcome-photo { max-height: none; object-position: center; }
+.booking-photo { display: block; margin-top: 32px; width: 100%; aspect-ratio: 1.9; object-fit: cover; }
+@media (max-width: 720px) {
+  .booking-photo { display: none; }
+  .contact-welcome .welcome-photo { height: 190px; }
 }
