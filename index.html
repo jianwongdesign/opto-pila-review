@@ -7,9 +7,11 @@
   <title>
    Osteopathy · Opto Pila
   </title>
-  <link href="style.css?v=10" rel="stylesheet"/>
+  <link href="style.css?v=11" rel="stylesheet"/>
   <script defer="" src="draft.js">
   </script>
+  <link rel="stylesheet" href="assets/ui/home.css?v=1">
+  <script defer src="assets/ui/home.js?v=1"></script>
  </head>
  <body class="index">
   <a class="skip" href="#main">
@@ -48,73 +50,39 @@
    </div>
   </header>
   <main id="main">
-   <section class="hero">
-    <div class="hero-layout wrap">
-     <h1>
-      When it hurts
-      <br/>
-      <span>
-       to move.
-      </span>
-     </h1>
-     <p class="hero-intro">
-      Show us what feels difficult, like reaching for a mug or tying your shoes. Your osteopath will assess how you move and explain what might help.
-     </p>
-     <div class="hero-action">
-      <a class="button" href="book.html">
-       Request an appointment
-      </a>
-      <a class="hero-secondary" href="first-visit.html">
-       Your first visit
-      </a>
-     </div>
+   <div class="opto-ui" data-clinic-hero="true">
+  <section class="visit-hero visit-fallback">
+    <div class="visit-shell">
+      <div class="visit-head">
+        <h1 class="visit-title">When it hurts
+to move.</h1>
+        <div class="visit-intro">
+          <p>Show us what feels difficult, like reaching for a mug or tying your shoes. Your osteopath will assess how you move and explain what might help.</p>
+          <div class="visit-actions"><a class="button" href="book.html">Request an appointment</a><a href="first-visit.html">Your first visit</a></div>
+        </div>
+      </div>
+      <div class="visit-media">
+        <ul class="visit-deck" aria-label="Choose an appointment">
+          <li class="visit-panel" data-visit="initial">
+            <img src="assets/visit-consult.webp" alt="Hands assessing the back of a clothed patient" decoding="async">
+            <h2>First consultation</h2><p>Tell us what brings you in. Your osteopath will listen, assess how you move and discuss your options.</p>
+            <a class="visit-link" href="book.html?service=initial">Request a first visit</a>
+          </li>
+          <li class="visit-panel" data-visit="movement">
+            <img src="assets/visit-movement.webp" alt="A practitioner observing a patient using a resistance band" decoding="async">
+            <h2>Movement assessment</h2><p>Explore a movement that feels stiff or uncomfortable, from turning your neck to reaching overhead.</p>
+            <a class="visit-link" href="book.html?service=movement">Request an assessment</a>
+          </li>
+          <li class="visit-panel" data-visit="follow-up">
+            <img src="assets/visit-follow.webp" alt="Hands resting on a patient’s back during an assessment" decoding="async">
+            <h2>Follow-up visit</h2><p>Revisit a movement from your last session and talk through what has changed.</p>
+            <a class="visit-link" href="book.html?service=follow-up">Request a follow-up</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="care-guide">
-     <div class="care-guide-inner wrap">
-      <a class="guide-title" href="#appointments">
-       Explore appointments
-      </a>
-      <ul class="guide-choices">
-       <li>
-        <a href="book.html?service=initial">
-         <img alt="" height="64" src="assets/consultation.webp" width="64"/>
-         <span>
-          <small>
-           New to the clinic
-          </small>
-          First consultation
-         </span>
-        </a>
-       </li>
-       <li>
-        <a href="book.html?service=movement">
-         <img alt="" height="64" src="assets/movement-assessment.webp" width="64"/>
-         <span>
-          <small>
-           For stiffness or discomfort
-          </small>
-          Movement assessment
-         </span>
-        </a>
-       </li>
-       <li>
-        <a href="book.html?service=follow-up">
-         <img alt="" height="64" src="assets/follow-up.webp" width="64"/>
-         <span>
-          <small>
-           Continuing your care
-          </small>
-          Follow-up visit
-         </span>
-        </a>
-       </li>
-      </ul>
-     </div>
-    </div>
-    <figure class="heroimage">
-     <img alt="An osteopath observing a seated patient’s shoulder as he raises his arm" fetchpriority="high" height="752" src="assets/shoulder-consultation.webp" width="1344"/>
-    </figure>
-   </section>
+  </section>
+</div>
    <section class="concerns">
     <div class="wrap">
      <h2>
