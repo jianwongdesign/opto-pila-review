@@ -189,7 +189,7 @@ dd { overflow-wrap: anywhere; }
   padding-top: calc(98px + env(safe-area-inset-top));
   padding-bottom: clamp(32px, 7vh, 88px);
 }
-.hero h1 { --size: clamp(4.6rem, 7.9vw, 8.1rem); line-height: .94; letter-spacing: -.04em; }
+.hero h1 { --size: clamp(4.3rem, 6.6vw, 6.9rem); line-height: .94; letter-spacing: -.04em; }
 .hero h1 span { color: var(--apricot); }
 .hero-intro { max-width: 38ch; margin: 24px 0; color: #fffaf5; font-size: clamp(1rem, 1.35vw, 1.2rem); line-height: 1.5; }
 .hero-action { display: flex; align-items: center; gap: 8px 22px; flex-wrap: wrap; }
