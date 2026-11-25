@@ -19,6 +19,7 @@
   --body: #40535b;
   --rule: #c5d4d3;
   --field-border: #718888;
+  --header-height: 112px;
   --gutter: clamp(20px, 5vw, 76px);
   --display: "DM Sans", "Helvetica Neue", sans-serif;
   color: var(--ink);
@@ -42,17 +43,17 @@ h2 { --size: clamp(2.25rem, 3.4vw, 3.25rem); }
 p { color: var(--body); }
 header { border-bottom: 1px solid var(--rule); }
 .bar, .foot, .brand, nav, .actions { display: flex; align-items: center; }
-.bar { min-height: 78px; gap: clamp(24px, 3vw, 44px); }
+.bar { min-height: calc(var(--header-height) + env(safe-area-inset-top)); padding-top: env(safe-area-inset-top); gap: clamp(26px, 4vw, 64px); }
 .brand { flex: none; width: fit-content; text-decoration: none; }
 .brand img { display: block; height: auto; }
 .bar .brand img { width: 122px; mix-blend-mode: multiply; }
-nav { margin-left: auto; gap: clamp(22px, 3vw, 42px); }
+nav { margin-left: auto; gap: clamp(28px, 4.5vw, 64px); }
 nav a, .book-top, .button, .under, .textbtn, .session-link, .foot > a:not(.brand), .menu {
   font-size: .9rem;
   font-weight: 500;
 }
 nav a, .book-top, .button, .session-link { text-decoration: none; }
-nav a { padding-block: 11px; }
+nav a { padding-block: 14px; white-space: nowrap; }
 nav a:hover, nav a[aria-current] { color: var(--teal-dark); text-decoration: underline; text-underline-offset: 6px; }
 .book-top, .button {
   display: inline-flex; align-items: center; justify-content: center; min-height: 45px;
@@ -126,12 +127,13 @@ dd { overflow-wrap: anywhere; }
   .services .service > div:nth-child(2) { grid-column: 2; grid-row: 1 / span 2; }
 }
 @media (max-width: 740px) {
-  .bar { min-height: 66px; gap: 12px; position: relative; }
+  :root { --header-height: 84px; }
+  .bar { gap: clamp(14px, 4vw, 24px); position: relative; }
   .bar .brand img { width: 91px; }
   .book-top { margin-left: auto; font-size: .85rem; padding: 6px 10px; }
-  .menu { display: inline-flex; align-items: center; min-height: 44px; padding: 4px 0; }
-  nav { display: none; position: absolute; z-index: 4; top: 100%; inset-inline: 0; padding: 12px var(--gutter); background: var(--paper); border-block: 1px solid var(--rule); }
-  nav.open { display: grid; gap: 0; }
+  .menu { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; justify-content: center; padding: 4px; }
+  nav { display: none; position: absolute; z-index: 4; top: 100%; inset-inline: 0; padding: 14px var(--gutter) 18px; background: var(--paper); border-block: 1px solid var(--rule); }
+  nav.open { display: grid; gap: 4px; }
   .serviceband .wrap { grid-template-columns: 1fr; gap: 16px; padding-block: 32px; }
   .sectionhead { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
   .sectionhead h2 { --size: clamp(1.85rem, 6vw, 2.35rem); }
@@ -157,7 +159,7 @@ dd { overflow-wrap: anywhere; }
 
 /* The homepage navigation shares the photograph's top edge. */
 .index header { position: absolute; inset: 0 0 auto; z-index: 3; color: white; border: 0; }
-.index .bar { display: grid; grid-template-columns: 1fr auto 1fr; min-height: 90px; }
+.index .bar { display: grid; grid-template-columns: 1fr auto 1fr; }
 .index nav { grid-column: 1; grid-row: 1; margin: 0; }
 .index .bar .brand { grid-column: 2; grid-row: 1; }
 .index .bar .book-top { grid-column: 3; grid-row: 1; justify-self: end; }
@@ -196,7 +198,6 @@ dd { overflow-wrap: anywhere; }
 .hero .button { min-height: 48px; }
 .hero-secondary { display: inline-flex; align-items: center; min-height: 44px; font-size: .9rem; text-underline-offset: 5px; }
 .hero-secondary:hover { color: var(--aqua); }
-.index .bar { padding-top: env(safe-area-inset-top); }
 @media (orientation: landscape) {
   .index .bar, .hero-layout {
     padding-left: max(var(--gutter), env(safe-area-inset-left));
@@ -268,14 +269,13 @@ footer :focus-visible { outline-color: var(--aqua); }
 .contact .notes section { border-color: var(--rule); }
 
 @media (min-width:741px) and (max-width:1000px) {
-  .index nav { gap: 17px; }
   .session-list { gap: 19px; }
   .services .service { grid-template-columns: 115px 1fr 1.2fr; }
   .services .service .session-link { grid-column: 2; grid-row: 2; }
   .services .service > div:nth-of-type(2), .service-portrait { grid-row: span 2; }
 }
 @media (max-width:740px) {
-  .index .bar { display: flex; min-height: 68px; }
+  .index .bar { display: flex; }
   .index nav { color: var(--ink); }
   .index .menu { color: white; }
   .hero-layout { padding-top: calc(82px + env(safe-area-inset-top)); padding-bottom: calc(24px + env(safe-area-inset-bottom)); }
@@ -305,7 +305,8 @@ footer :focus-visible { outline-color: var(--aqua); }
 }
 
 @media (max-height: 520px) and (orientation: landscape) {
-  .index .bar { min-height: 58px; }
+  :root { --header-height: 72px; }
+  .bar .brand img { width: 90px; }
   .hero-layout { padding-block: calc(66px + env(safe-area-inset-top)) max(15px, env(safe-area-inset-bottom)); }
   .hero h1 { --size: clamp(2.9rem, 12vh, 4.2rem); }
   .hero-intro { margin: 10px 0; max-width: 42ch; font-size: .94rem; }
@@ -427,6 +428,6 @@ footer :focus-visible { outline-color: var(--aqua); }
 }
 
 @media (max-width: 380px) {
-  .bar.wrap { padding-inline: 10px; gap: 7px; }
+  .bar.wrap { padding-inline: max(14px, env(safe-area-inset-left)) max(14px, env(safe-area-inset-right)); gap: 12px; }
   .bar .book-top { padding-inline: 7px; white-space: nowrap; }
 }
