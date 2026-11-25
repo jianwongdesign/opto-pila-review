@@ -393,8 +393,12 @@ footer :focus-visible { outline-color: var(--aqua); }
 .clinic-footer { color: #fffaf4; }
 .foot-columns { display: grid; grid-template-columns: 1.25fr .85fr 1fr; gap: clamp(24px, 5vw, 80px); padding-block: clamp(38px, 5vw, 76px); }
 .foot-columns > * { min-width: 0; }
-.foot-identity .brand { padding: 12px 16px; background: white; border-radius: var(--radius-control); }
-.foot-identity .brand img { width: 140px; }
+/* Reverse the supplied artwork to white. Screen lets the navy show through the original white canvas. */
+.foot-identity .brand img {
+  width: 140px;
+  filter: grayscale(1) invert(1) brightness(1.85) contrast(2);
+  mix-blend-mode: screen;
+}
 .foot-columns p, .foot-reception dd { color: #e0eaee; max-width: 34ch; }
 .foot-identity p { margin: 16px 0 20px; }
 .foot-book { display: inline-flex; align-items: center; gap: 20px; min-height: 44px; padding: 8px 16px; border-radius: var(--radius-control); background: var(--aqua); color: var(--navy); text-decoration: none; }
