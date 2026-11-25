@@ -391,7 +391,7 @@ footer :focus-visible { outline-color: var(--aqua); }
 }
 
 .clinic-footer { color: #fffaf4; }
-.foot-columns { display: grid; grid-template-columns: 1.25fr .85fr 1fr; gap: clamp(24px, 5vw, 80px); padding-block: clamp(38px, 5vw, 76px); }
+.foot-columns { display: grid; grid-template-columns: 1.1fr .95fr 1fr 1.12fr; gap: clamp(24px, 3.2vw, 52px); padding-block: clamp(36px, 4vw, 60px); }
 .foot-columns > * { min-width: 0; }
 /* Reverse the supplied artwork to white. Screen lets the navy show through the original white canvas. */
 .foot-identity .brand img {
@@ -408,19 +408,22 @@ footer :focus-visible { outline-color: var(--aqua); }
 .foot-info a { display: inline-block; padding-block: 5px; }
 .foot-info a, .foot-base a { text-decoration: none; }
 .foot-info a:hover, .foot-base a:hover { text-decoration: underline; }
+.foot-more { display: inline-flex; align-items: center; min-height: 44px; margin-top: 6px; color: var(--aqua); text-underline-offset: 4px; }
+.foot-info .foot-more { text-decoration: underline; }
+.foot-reception p + p { margin-top: 12px; }
 .foot-reception dl { margin: 0 0 18px; display: grid; gap: 10px; }
 .foot-reception dt { color: #c4d8dd; font-size: .82rem; }
 .foot-reception dd { margin: 0; overflow-wrap: anywhere; }
 .foot-base { border-top: 1px solid #596c8d; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 18px; padding-block: 18px; font-size: .9rem; color: #e0eaee; }
 .foot-base small { font-size: inherit; }
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   .foot-columns { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
-  .foot-identity { grid-column: 1 / -1; }
   .foot-info a { padding-block: 8px; }
 }
 @media (max-width: 450px) {
   .foot-columns { grid-template-columns: 1fr; }
-  .foot-info ul { display: flex; flex-wrap: wrap; gap: 0 18px; }
+  .foot-columns > section { padding-top: 18px; border-top: 1px solid #596c8d; }
+  .foot-info li a { min-height: 44px; }
 }
 
 .appointment-photo, .service-portrait, .booking-photo { border-radius: var(--radius-photo); }
