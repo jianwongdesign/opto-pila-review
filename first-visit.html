@@ -25,9 +25,10 @@
 <meta name="twitter:image:alt" content="OsteoMotion logo and the words “When it hurts to move” beside an illustration of a clinic consultation.">
 
   <link rel="icon" type="image/png" sizes="192x192" href="assets/osteomotion-icon.png"/>
-  <link href="style.css?v=18" rel="stylesheet"/>
+  <link href="style.css?v=19" rel="stylesheet"/>
   <script defer="" src="draft.js">
   </script>
+  <script defer src="assets/visit-planner.js"></script>
  </head>
  <body class="first-visit">
   <a class="skip" href="#main">
@@ -69,7 +70,24 @@
      </div>
      <img alt="A patient discussing her first visit with an osteopath" class="welcome-photo" height="1024" loading="lazy" src="assets/consultation.webp" width="768"/>
     </div>
-    <div class="notes">
+    <section class="visit-planner" id="visit-questions" aria-labelledby="planner-heading">
+  <div class="planner-heading">
+    <h2 id="planner-heading">Questions to bring to your visit</h2>
+    <p>Think of one thing you’d like to do more comfortably. Which questions would help you talk it through?</p>
+  </div>
+  <div class="planner-layout">
+    <div class="planner-topics">
+      <article><h3>My daily routine</h3><p class="planner-question">Can I show you the part of my day that feels difficult?</p><p>A specific moment, like turning to look behind you, gives you a starting point. Think about when you first noticed a change.</p></article>
+      <article><h3>The assessment</h3><p class="planner-question">What are you looking for when I make this movement?</p><p>An osteopath may ask you to move while they watch. You can ask what they noticed and how it relates to the difficulty you described.</p></article>
+      <article><h3>Hands-on care</h3><p class="planner-question">Could you explain what you’d like to do before we start?</p><p>You can ask what a technique involves and tell your osteopath what feels comfortable before deciding whether to go ahead.</p></article>
+      <article><h3>My options</h3><p class="planner-question">What choices do I have, and what are the benefits and risks of each?</p><p>Tell your osteopath what matters most to you. That gives you both a basis for comparing the options they explain.</p></article>
+      <article><h3>After the visit</h3><p class="planner-question">What should I look out for, and who should I contact if things change?</p><p>Before you leave, go over the next step in your own words. Write down any instructions you want to remember.</p></article>
+    </div>
+  </div>
+  <p class="planner-sources">Patient guides from the <a href="https://www.nhs.uk/nhs-services/gps/what-to-ask-your-doctor/">NHS</a> and the <a href="https://www.osteopathy.org.uk/for-patients/visiting-an-osteopath/what-to-expect-at-your-appointment/">General Osteopathic Council</a>.</p>
+</section>
+
+<div class="notes">
      <section>
       <h2>
        Before you arrive
