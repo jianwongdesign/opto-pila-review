@@ -427,3 +427,12 @@ footer :focus-visible { outline-color: var(--apricot); }
 @media (max-width: 740px) {
   #nav.open { border-radius: 0 0 var(--radius-photo) var(--radius-photo); }
 }
+
+@media (max-width: 380px) {
+  .bar.wrap { padding-inline: 10px; gap: 7px; }
+  .bar .brand { font-size: 21px; gap: 4px; }
+  .bar .book-top { padding-inline: 7px; white-space: nowrap; }
+}
+@media (max-width: 350px) {
+  .bar .brand .mark { display: none; }
+}
